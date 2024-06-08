@@ -35,7 +35,7 @@ def get_todo_by_id(id):
         return jsonify({'msg': 'ToDo not found'}), 404
     return jsonify(todo_schema(todo)), 200
 
-@app.route('/todos/<id>', methods=['PUT'])
+@app.route('/todos/<id>', methods=['PATCH'])
 @jwt_required()
 def update_todo(id):
     data = request.get_json()
@@ -44,6 +44,7 @@ def update_todo(id):
     db.todos.update_one({'_id': ObjectId(id)}, {'$set': data})
     todo = db.todos.find_one({'_id': ObjectId(id)})
     return jsonify(todo_schema(todo)), 200
+
 
 @app.route('/todos/<id>', methods=['DELETE'])
 @jwt_required()

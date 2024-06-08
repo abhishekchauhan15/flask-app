@@ -26,66 +26,81 @@ This is a simple ToDo application built with Flask as the backend framework and 
 ### Local Setup without Docker
 
 1. **Clone the repository:**
-    ```bash
-    git clone <repository-url>
-    cd flask_mongo_todo
-    ```
+
+   ```bash
+   git clone flask-app
+   cd flask-app
+   ```
 
 2. **Create a virtual environment:**
-    ```bash
-    python -m venv venv
-    ```
+
+   ```bash
+   python -m venv venv
+   ```
 
 3. **Activate the virtual environment:**
 
-    - On Windows:
-      ```bash
-      venv\Scripts\activate
-      ```
-    - On MacOS/Linux:
-      ```bash
-      source venv/bin/activate
-      ```
+   - On Windows:
+     ```bash
+     venv\Scripts\activate
+     ```
+   - On MacOS/Linux:
+     ```bash
+     source venv/bin/activate
+     ```
 
 4. **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 5. **Configure environment variables in `config.py`:**
-    ```python
-    import os
 
-    class Config:
-        SECRET_KEY = os.environ.get('SECRET_KEY') or 'your_secret_key'
-        MONGO_URI = os.environ.get('MONGO_URI') or 'mongodb+srv://flask-app:flask@flask.xv7avzt.mongodb.net/?retryWrites=true&w=majority&appName=flask'
-    ```
+   ```python
+   import os
+
+   class Config:
+       SECRET_KEY = os.environ.get('SECRET_KEY') or 'your_secret_key'
+       MONGO_URI = os.environ.get('MONGO_URI') or 'mongodb+srv://flask-app:flask@flask.xv7avzt.mongodb.net/?retryWrites=true&w=majority&appName=flask'
+   ```
 
 6. **Run the application:**
-    ```bash
-    flask run
-    ```
+
+   ```bash
+   flask run
+   ```
 
 7. **Access the application:**
-    Open your web browser and go to `http://localhost:5000`.
+   Open your web browser and go to `http://localhost:5000`.
 
 ### Setup with Docker
 
 1. **Clone the repository:**
-    ```bash
-    git clone <repository-url>
-    cd flask_mongo_todo
-    ```
+
+   ```bash
+   git clone flask-app
+   cd flask-app
+   ```
 
 2. **Build the Docker image:**
-    ```bash
-    docker build -t flask-mongo-todo .
-    ```
+
+   ```bash
+   docker build -t flask-app .
+   ```
 
 3. **Run the Docker container, passing environment variables:**
-    ```bash
-    docker run -e SECRET_KEY=your_secret_key -e MONGO_URI='mongodb+srv://flask-app:flask@flask.xv7avzt.mongodb.net/?retryWrites=true&w=majority&appName=flask' -p 5000:5000 flask-mongo-todo
-    ```
+
+   ```bash
+   docker run -e SECRET_KEY=your_secret_key -e MONGO_URI='mongodb+srv://flask-app:flask@flask.xv7avzt.mongodb.net/?retryWrites=true&w=majority&appName=flask' -p 5000:5000 flask-app
+   ```
 
 4. **Access the application:**
-    Open your web browser and go to `http://localhost:5000`.
+   Open your web browser and go to `http://localhost:5000`.
+
+
+## Postman Collection
+
+Access the application in your web browser at [Flask app Postman Collection](https://www.postman.com/universal-moon-822026/workspace/flask-app/collection/17562830-60519891-271c-4bc4-8f67-d63eafcab397?action=share&creator=17562830).
+
+
